@@ -60,6 +60,10 @@ The password is `mpcs52553`
 
 ## Trevor Austin (Lecturer)
 
+## Daniel Bivona (TA)
+
+## Jonathan Jong (TA)
+
 ---
 
 # Important pages
