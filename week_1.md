@@ -214,5 +214,5 @@ comments or a README are good ways of doing this.
 ---
 
 # Exercise 1: Resume Styling
-Assignment submissions are on [Canvas](https://canvas.uchicago.edu/courses/47824/assignments/525111)
-Get the code to get started on [GitHub](https://classroom.github.com/a/JXV2A2Ft)
+- Assignment submissions are on [Canvas](https://canvas.uchicago.edu/courses/47824/assignments/525111)
+- Get the code to get started on [GitHub](https://classroom.github.com/a/JXV2A2Ft)
