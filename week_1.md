@@ -211,3 +211,8 @@ comments or a README are good ways of doing this.
 - [Photo Suggestions](https://unsplash.com/)
 - [CSS Zen Garden](http://www.csszengarden.com/)
 - [Browser Feature Availability](https://caniuse.com/)
+---
+
+# Exercise 1: Resume Styling
+Assignment submissions are on [Canvas](https://canvas.uchicago.edu/courses/47824/assignments/525111)
+Get the code to get started on [GitHub](https://classroom.github.com/a/JXV2A2Ft)
