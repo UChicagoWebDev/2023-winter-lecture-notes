@@ -69,7 +69,7 @@ The password is `mpcs52553`
 # Important pages
 - GitHub: https://github.com/UChicagoWebDev
 - Slack: https://app.slack.com/client/T71CT0472/C02TBJ5BHU2
-- Syllabus: https://canvas.uchicago.edu/courses/38721
+- Syllabus: https://canvas.uchicago.edu/courses/47824
 ---
 
 # Objectives
