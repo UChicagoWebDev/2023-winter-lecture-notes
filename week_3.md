@@ -138,7 +138,7 @@ the URL path and returns them to the web browser.
 ```
 
 Take a look at how math.php (above) renders on
-[http://uchicagowebdev.com/math.php](http://uchicagowebdev.com/math.php).
+[http://uchicagowebdev.com/examples/week_3/math.php](http://uchicagowebdev.com/examples/week_3/math.php).
 
 ???
 
@@ -180,9 +180,11 @@ https://en.wikipedia.org/wiki/LAMP_(software_bundle)
 
 [Dealing with Forms (PHP Documentation)](https://www.php.net/manual/en/tutorial.forms.php)
 
-[http://uchicagowebdev.com/post.php](http://uchicagowebdev.com/post.php)
+[http://uchicagowebdev.com/examples/week_3/post.php](http://uchicagowebdev.com/examples/week_3/post.php)
 
-[http://uchicagowebdev.com/post_no_escape.php](http://uchicagowebdev.com/post_no_escape.php)
+[http://uchicagowebdev.com/examples/week_3/post_no_escape.php](http://uchicagowebdev.com/examples/week_3/post_no_escape.php)
+
+`scp trevor.php student@uchicagowebdev.com:/var/www/html/student/`
 ---
 
 # Databases
@@ -241,7 +243,7 @@ VALUES ("Lair of Bones", 2, 2);`
 
 # Lab: Server-Side Rendering
 
-Copy the `<yourname>.html` file you uploaded to `http://uchicagowebdev.com/students/`
+Copy the `<yourname>.html` file you uploaded to `http://uchicagowebdev.com/student/`
 in Week 1 and rename the copy `<yourname>.php`
 
 Add some expressions to be evaluated server-side inside `<?php ?>` tags.
@@ -252,7 +254,7 @@ the value of `HTTP_USER_AGENT` and tell you what browser is visiting the page.
 
 Upload the result again with:
 ```bash
-scp <yourname>.php student@uchicagowebdev.com:/var/www/html/helloclass
+scp <yourname>.php student@uchicagowebdev.com:/var/www/html/student/
 ```
 
 The password is `mpcs52553`
