@@ -115,7 +115,7 @@ function increment() {
 
 # Lab: Buttons to change the styling of a `<div>`
 
-[dommanipulation.html](https://uchciagoweddev.com/examples/week_4/dommanipulation.html)
+[dommanipulation.html](https://uchicagowebdev.com/examples/week_4/dommanipulation.html)
 ```
 <div id="testing_ground">Watch me change colors!</div>
 
@@ -142,7 +142,7 @@ function recolor(id) {
 ---
 
 # Lab: Buttons to add new `<li>`s to a List
-[dommanipulation.html](https://uchciagoweddev.com/examples/week_4/dommanipulation.html)
+[dommanipulation.html](https://uchicagowebdev.com/examples/week_4/dommanipulation.html)
 ---
 
 # ES6
