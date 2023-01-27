@@ -87,8 +87,8 @@ needed to send the data to the server in order to give feedback.
 - onfocus
 
 ## Examples
-- [Alert Example](http://uchicagowebdev.com/week_4/examples/alert.html)
-- [Console Log Example](http://uchicagowebdev.com/week_4/examples/console.html)
+- [Alert Example](http://uchicagowebdev.com/examples/week_4/alert.html)
+- [Console Log Example](http://uchicagowebdev.com/examples/week_4/console.html)
 ---
 
 # Lab: Logging events to the Console
@@ -115,6 +115,7 @@ function increment() {
 
 # Lab: Buttons to change the styling of a `<div>`
 
+[dommanipulation.html](https://uchciagoweddev.com/examples/week_4/dommanipulation.html)
 ```
 <div id="testing_ground">Watch me change colors!</div>
 
@@ -141,6 +142,7 @@ function recolor(id) {
 ---
 
 # Lab: Buttons to add new `<li>`s to a List
+[dommanipulation.html](https://uchciagoweddev.com/examples/week_4/dommanipulation.html)
 ---
 
 # ES6
