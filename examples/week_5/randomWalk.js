@@ -37,68 +37,6 @@ function oneStep(query){
 function walkFive() {
     let query = document.getElementById("input").value;
     oneStep(query)
-    .then((response) => {
-        if(response.status != 200) { throw new Error("bad request"); }
-
-        return response.json();
-    })
-    .then((json) => {
-        let suggestions = json.relatedSearches;
-        let size = suggestions.length;
-        let randomIndex = Math.floor(Math.random() * size);
-        randomSuggestion = suggestions[randomIndex];
-        return randomSuggestion.text;
-    })
-    .then((query) => {
-        return oneStep(query);
-    })
-    .then((p) => {
-        p.then((response) => {
-            if(response.status != 200) { throw new Error("bad request"); }
+    .then((nextQuery) => { return oneStep(nextQuery) })
     
-            return response.json();
-        })
-        .then((json) => {
-            let suggestions = json.relatedSearches;
-            let size = suggestions.length;
-            let randomIndex = Math.floor(Math.random() * size);
-            randomSuggestion = suggestions[randomIndex];
-            return randomSuggestion.text;
-        })
-        .then((query) => {
-            return oneStep(query);
-        })
-        .then((p) => {
-            p.then((response) => {
-                if(response.status != 200) { throw new Error("bad request"); }
-        
-                return response.json();
-            })
-            .then((json) => {
-                let suggestions = json.relatedSearches;
-                let size = suggestions.length;
-                let randomIndex = Math.floor(Math.random() * size);
-                randomSuggestion = suggestions[randomIndex];
-                return randomSuggestion.text;
-            })
-            .then((query) => {
-                return oneStep(query);
-            })
-            .then((response) => {
-                if(response.status != 200) { throw new Error("bad request"); }
-        
-                return response.json();
-            })
-            .then((json) => {
-                let suggestions = json.relatedSearches;
-                let size = suggestions.length;
-                let randomIndex = Math.floor(Math.random() * size);
-                randomSuggestion = suggestions[randomIndex];
-                return randomSuggestion.text;
-            })
-            .then((query) => {
-                return oneStep(query);
-            })
-        })
-    })
 }
