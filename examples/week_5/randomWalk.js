@@ -17,7 +17,21 @@ function oneStep(query){
         headers: walkHeaders,
     };
 
-    return fetch(queryurl, myInit);
+    let nextQuery = fetch(queryurl, myInit)
+    .then((response) => {
+        if(response.status != 200) { throw new Error("bad request"); }
+
+        return response.json();
+    })
+    .then((json) => {
+        let suggestions = json.relatedSearches;
+        let size = suggestions.length;
+        let randomIndex = Math.floor(Math.random() * size);
+        randomSuggestion = suggestions[randomIndex];
+        return randomSuggestion.text;
+    });
+
+    return nextQuery;
 }
 
 function walkFive() {
@@ -70,7 +84,7 @@ function walkFive() {
             .then((query) => {
                 return oneStep(query);
             })
-            p.then((response) => {
+            .then((response) => {
                 if(response.status != 200) { throw new Error("bad request"); }
         
                 return response.json();
