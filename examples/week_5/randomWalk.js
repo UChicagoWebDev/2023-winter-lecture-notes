@@ -2,7 +2,6 @@ const bing_api_endpoint = "https://api.bing.microsoft.com/v7.0/images/search";
 const bing_api_key = BING_API_KEY
 
 function oneStep(query){
-    console.log(query);
     // go again from here
     let queryurl = bing_api_endpoint + "?q=" + encodeURIComponent(query);
     // request.setRequestHeader("Ocp-Apim-Subscription-Key", bing_api_key);
@@ -31,6 +30,7 @@ function oneStep(query){
         return randomSuggestion.text;
     });
 
+    console.log(nextQuery);
     return nextQuery;
 }
 
@@ -38,5 +38,8 @@ function walkFive() {
     let query = document.getElementById("input").value;
     oneStep(query)
     .then((nextQuery) => { return oneStep(nextQuery) })
-    
+    .then((nextQuery) => { return oneStep(nextQuery) })
+    .then((nextQuery) => { return oneStep(nextQuery) })
+    .then((nextQuery) => { return oneStep(nextQuery) })
+    .then((nextQuery) => { return oneStep(nextQuery) })
 }
