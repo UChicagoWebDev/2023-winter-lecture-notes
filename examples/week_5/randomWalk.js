@@ -26,18 +26,25 @@ function oneStep(query){
         let suggestions = json.relatedSearches;
         let size = suggestions.length;
         let randomIndex = Math.floor(Math.random() * size);
-        randomSuggestion = suggestions[randomIndex];
-        return randomSuggestion.text;
+        randomSuggestion = suggestions[randomIndex].text;
+        console.log(randomSuggestion);
+        return randomSuggestion;
     });
-
-    console.log(nextQuery);
+    // nextQuery is a Promise, because then() returns a Promise
     return nextQuery;
 }
 
 function walkFive() {
     let query = document.getElementById("input").value;
     oneStep(query)
-    .then((nextQuery) => { return oneStep(nextQuery) })
+    .then((nextQuery) => { 
+        // nextQuery is a Promise when it is passed in to this handler,
+        // but when you pass a Promise as an argument inside a then()
+        // it is automatically "unwrapped" to the underlying return
+        // type, in this case the string randomSuggestion. So inside
+        // this code block, nextQuery is a string, and we can pass it
+        // to oneStep()
+        return oneStep(nextQuery) })
     .then((nextQuery) => { return oneStep(nextQuery) })
     .then((nextQuery) => { return oneStep(nextQuery) })
     .then((nextQuery) => { return oneStep(nextQuery) })
