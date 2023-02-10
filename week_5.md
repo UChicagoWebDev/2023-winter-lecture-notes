@@ -16,8 +16,8 @@ class: agenda
 - Choosing Frameworks
 
 # Web API Design Patterns
-- Token-based authentication
-- Magic links
+- ~~Token-based authentication~~
+- ~~Magic links~~
 
 # Labs
 - SetTimeout: Egg Timer
@@ -335,6 +335,10 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 ```
+---
+
+# This is as far as we got on Week 5 – pushing the content below to Week6
+
 ---
 
 # Cookies
