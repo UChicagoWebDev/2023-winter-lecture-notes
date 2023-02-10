@@ -27,20 +27,30 @@ https://en.wikipedia.org/wiki/Single-page_application
 https://flask.palletsprojects.com/en/2.0.x/tutorial/static/
 ---
 
-# Single Page Applications
-
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
-
-https://developer.mozilla.org/en-US/docs/Glossary/Cookie
+# Static Assets in Flask
 ---
 
-# Lab: Who is Best?
-
+# Path, Routing, and History
 Modify the example app in `spa/` so that the animal we pick as best goes into
 our browser history. Make sure that if we load the page with that URL, the
 correct animal is identified as best.
 
+# Lab: Who is Best?
 https://developer.mozilla.org/en-US/docs/Web/API/History_API
+---
+
+# Review: Query Variables
+---
+
+# Review: Fragments
+---
+
+# Cookies
+https://developer.mozilla.org/en-US/docs/Glossary/Cookie
+---
+
+# SessionStorage and LocalStorage
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
 ---
 
 # Watch Party 2
