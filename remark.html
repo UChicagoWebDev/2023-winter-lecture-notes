@@ -6,13 +6,42 @@
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       textarea { display: none; }
-      header ul { margin: 0; }
-      header li {
-        display: inline-block;
-        padding: 10px 10px 10px 10px;
+      header { 
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 4;
+        position: relative;
+      }
+      header.big { 
+        font-size: 32px;
+        margin: 2em;
+      }
+      header.big a, header.big span {
+        flex: 0 0 auto;
+      }
+      header a, header span {
+        font-family: "Droid Sans", sans-serif;
+        font-weight: bold;
+        color: #333;
+        display: block;
+        padding: 0.4em 0.8em 0.4em 0.8em;
+        margin: 0.2em;
+        background-color: white;
+        text-decoration: none;
+        border: 0.05em solid #888;
+        border-radius: 0.3em;
+        box-shadow: -0.05em -0.02em 0.2em 0.02em #ddd;
+      }
+      header a:hover {
+        box-shadow: -0.05em 0.02em 0.2em 0.02em #999;
+      }
+      header span {
+        color: #BBB;
+        border: 0.05em solid #DDD;
       }
 
       body { font-family: 'Droid Serif'; }
@@ -51,17 +80,15 @@
   </head>
   <body>
     <header>
-      <ul>
-        <li><a href="remark.html?week=1">Week 1</a></li>
-        <li><a href="remark.html?week=2">Week 2</a></li>
-        <li><a href="remark.html?week=3">Week 3</a></li>
-        <li><a href="remark.html?week=4">Week 4</a></li>
-        <li><a href="remark.html?week=5">Week 5</a></li>
-        <li><a href="remark.html?week=6">Week 6</a></li>
-        <li><a>Week 7</a></li>
-        <li><a>Week 8</a></li>
-        <li><a>Week 9</a></li>
-      </ul>
+      <a href="remark.html?week=1">Week 1</a>
+      <a href="remark.html?week=2">Week 2</a>
+      <a href="remark.html?week=3">Week 3</a>
+      <a href="remark.html?week=4">Week 4</a>
+      <a href="remark.html?week=5">Week 5</a>
+      <a href="remark.html?week=6">Week 6</a>
+      <span>Week 7</span>
+      <span>Week 8</span>
+      <span>Week 9</span>
     </header>
     <textarea id="source">
     </textarea>
@@ -78,6 +105,9 @@
         }
         const notesFile = "week_" + week + ".md"
         var slideshow = remark.create({sourceUrl: notesFile});
+      }
+      else {
+        document.querySelector("header").classList.add("big")
       }
     </script>
   </body>
