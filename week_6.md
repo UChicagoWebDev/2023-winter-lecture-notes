@@ -5,7 +5,7 @@ class: center, middle
 ---
 
 class: agenda
-# Single Page Applications
+# What is a Single Page Application (SPA)?
 - Static assets in Flask
 - Path, Routing and history
 - Review: Query Variables
@@ -16,7 +16,12 @@ class: agenda
 
 # Watch Party 2: The Single Page Experience
 ---
-# Single Page Applications
+# Single Page Applications (SPAs)
+
+> A single-page application (SPA) is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages. The goal is faster transitions that make the website feel more like a native app.
+> 
+> In a SPA, a page refresh never occurs; instead, all necessary HTML, JavaScript, and CSS code is either retrieved by the browser with a single page load,[1] or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions.
+
 https://en.wikipedia.org/wiki/Single-page_application
 
 https://flask.palletsprojects.com/en/2.0.x/tutorial/static/
