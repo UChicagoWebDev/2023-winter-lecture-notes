@@ -21,10 +21,24 @@ function makeBest(animal, pushHistory=true) {
   }
 
   // TODO: push /animal to the URL bar and add this page to the history
+
+  // DOES NOT WORK: location.replace('/'+animal)
+
+  if(pushHistory) {
+    let url = new URL(document.URL);
+    window.history.pushState(null, animal, '/animal'+url.search);
+  }
 }
 
 function loadAnimal(pushHistory=true) {
   // TODO: Check the URL bar on load so e.g. /cat makes cat best
+  url = new URL(document.URL);
+  path = url.pathname; // '/animal'
+  parsed = path.split('/'); // ['', 'animal']
+
+  params = url.search;
+  animal = params.split('=')[1]
+  makeBest(animal, pushHistory);
 }
 
 window.addEventListener("load", loadAnimal);
