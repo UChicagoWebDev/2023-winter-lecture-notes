@@ -1,16 +1,16 @@
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      display: true,
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     display: true,
+  //   }
+  // }
 
   login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    this.setState({display: false});
+    //this.setState({display: false});
 
     fetch("http://127.0.0.1:5000/api/login", {
       method: 'POST',
@@ -20,8 +20,9 @@ class Login extends React.Component {
       if(response.status == 200) {
         response.json().then((data) => {
           window.localStorage.setItem("journal_session_token", data.session_token);
-          document.getElementById("compose").setAttribute('style', 'display: block;');
-          document.getElementById("posts").setAttribute('style', 'display: block;');
+          // document.getElementById("compose").setAttribute('style', 'display: block;');
+          // document.getElementById("posts").setAttribute('style', 'display: block;');
+          this.props.loginHandler();
         });
 
       } else {
@@ -36,13 +37,14 @@ class Login extends React.Component {
 
   logout() {
     window.localStorage.removeItem("journal_session_token");
-    this.setState({display: true});
-    document.getElementById("compose").setAttribute('style', 'display: none;');
-    document.getElementById("posts").setAttribute('style', 'display: none;');
+    // this.setState({display: true});
+    this.props.logoutHandler();
+    // document.getElementById("compose").setAttribute('style', 'display: none;');
+    // document.getElementById("posts").setAttribute('style', 'display: none;');
   }
 
   render() {
-    if(this.state.display) {
+    if(!this.props.loggedIn) {
       return (
         <div>
           <h2>Login</h2>
@@ -109,12 +111,12 @@ class Compose extends React.Component {
 }
 
 class Posts extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     posts: [],
+  //   }
+  // }
 
   refresh(){
     const session_token = window.localStorage.getItem("journal_session_token");
@@ -125,12 +127,12 @@ class Posts extends React.Component {
     })
     .then((response) => response.json())
     .then((data) => {
-      this.setState({posts: data});
+      // this.setState({posts: data});
     });
   }
 
   render() {
-    const posts = this.state.posts.map((post) =>
+    const posts = this.props.posts.map((post) =>
       <div key={post.id} id={"post_" + post.id}>
         <h3>{post.title}</h3>
         <div>{post.body}</div>
@@ -152,25 +154,41 @@ Posts.propTypes = {
 }
 
 class Journal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+      posts: [
+        {id: 1, title: "ONE", body: "I am first!"},
+        {id: 2, title: "2", body: "Better than the original!"}
+      ]
+    }
+  }
 
   loginHandler() {
     // TODO: update this call by managing State
+    this.setState({isLoggedIn: true});
   }
 
   logoutHandler() {
     // TODO: replace this call by managing State
+    this.setState({isLoggedIn: false})
+
   }
+
+  
 
   render() {
     return (
       <div className="weblog">
         <TitleBar />
         <Login
-          loginHandler={this.loginHandler}
-          logoutHandler={this.logoutHandler}
+          isLoggedIn={this.state.isLoggedIn}
+          loginHandler={()=>this.loginHandler()}
+          logoutHandler={()=>this.logoutHandler()}
         />
-        <Compose />
-        <Posts />
+        {this.state.isLoggedIn && <Compose />}
+        {this.state.isLoggedIn && <Posts posts={this.state.posts}/>}
       </div>
     );
   }
