@@ -75,7 +75,8 @@ class Game extends React.Component {
     }
 
     newHistory.push(newState);
-    this.setState({history: newHistory});
+    // this.setState(newHistory);  this was the bug, newHistory is [{}, {}, {}]
+    this.setState({history: newHistory});  // state is {history: [...]}
   }
 
   timeTravel = (turn) => {
