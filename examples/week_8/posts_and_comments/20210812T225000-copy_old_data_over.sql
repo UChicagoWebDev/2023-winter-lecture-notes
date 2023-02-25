@@ -9,8 +9,12 @@
 
 -- migrate the posts first
 
-insert into posts_and_comments ...
+insert into posts_and_comments
+    (id, slug, title, body)
+    select id, slug, title, body from posts;
 
 -- then migrate the comments
 
-insert into posts_and_comments ...
+insert into posts_and_comments
+    (post_id, body, author)
+    select post_id, body, author from comments;

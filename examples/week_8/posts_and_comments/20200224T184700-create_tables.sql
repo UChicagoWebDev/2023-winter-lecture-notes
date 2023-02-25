@@ -1,4 +1,4 @@
--- sqlite3 weblog.sqlite < 20200224T184700-create_tables.sql
+-- sqlite3 weblog.sqlite3 < 20200224T184700-create_tables.sql
 
 create table posts (
   id INTEGER PRIMARY KEY,

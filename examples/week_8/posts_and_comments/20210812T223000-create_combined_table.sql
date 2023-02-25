@@ -14,7 +14,7 @@
 -- );
 
 create table posts_and_comments (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  id INTEGER PRIMARY KEY,
   title VARCHAR(255),
   slug VARCHAR(30),
   body TEXT,
