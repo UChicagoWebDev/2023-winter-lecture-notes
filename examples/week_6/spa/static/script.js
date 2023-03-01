@@ -26,7 +26,7 @@ function makeBest(animal, pushHistory=true) {
 
   if(pushHistory) {
     let url = new URL(document.URL);
-    window.history.pushState(null, animal, '/animal'+url.search);
+    window.history.pushState(null, animal, '/' + animal + url.search);
   }
 }
 
@@ -35,9 +35,9 @@ function loadAnimal(pushHistory=true) {
   url = new URL(document.URL);
   path = url.pathname; // '/animal'
   parsed = path.split('/'); // ['', 'animal']
+  animal = parsed[1];
 
-  params = url.search;
-  animal = params.split('=')[1]
+  console.log("Making best animal: " + animal)
   makeBest(animal, pushHistory);
 }
 
