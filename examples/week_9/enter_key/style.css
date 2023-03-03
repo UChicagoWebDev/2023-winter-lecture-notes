@@ -1,0 +1,53 @@
+body {
+  margin: 0
+}
+
+.weblog {
+  width: 960px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.title_bar {
+  background-color: #CCFFEE
+}
+
+h1 {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.compose {
+  position: fixed;
+  bottom: 0;
+}
+
+.post_form {
+  background-color: white;
+  width: 400px;
+  border: 2px solid #AADDCC;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px 10px;
+  padding: 20px 40px 20px 40px;
+}
+
+.post_form textarea {
+  min-height: 50px;
+  height: auto;
+  grid-column: 1 / 3;
+  border: 2px solid #AADDCC;
+  border-radius: 4px;
+}
+
+.post_form button {
+  grid-column: 3;
+  width: 100%;
+  height: 50px;
+  margin-top: 0;
+  font-size: 18px;
+  border: 2px solid #AADDCC;
+  border-radius: 4px;
+}
