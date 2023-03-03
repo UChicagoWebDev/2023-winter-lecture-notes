@@ -1,3 +1,4 @@
 bcrypt
+flask
 Flask
 pytest
