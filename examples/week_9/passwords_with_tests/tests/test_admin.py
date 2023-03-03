@@ -10,6 +10,8 @@ def client():
 
 def test_admin_forbidden(client):
     """Returns a 403 to calls without the correct secret password"""
+    return
 
 def test_admin_with_code(client):
     """Returns a 200 to calls with the correct secret password"""
+    return

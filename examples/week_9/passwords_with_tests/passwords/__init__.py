@@ -12,7 +12,8 @@ def create_app(test_config=None):
 
     if test_config is None:
         config = configparser.ConfigParser()
-        config.read('secrets.cfg')
+        config.read_file(open(os.path.join(os.path.dirname(__file__), '../secrets.cfg')))
+
         app.config.update(
             DATABASE = os.path.join(app.instance_path, 'passwords.sqlite'),
             PEPPER = config['secrets']['PEPPER']
