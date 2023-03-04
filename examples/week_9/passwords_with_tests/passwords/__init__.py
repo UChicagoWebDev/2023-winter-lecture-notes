@@ -39,7 +39,7 @@ def create_app(test_config=None):
     def admin():
         body = request.get_json()
         secret_code = body.get('secret_code', None)
-        if secret_code == 'open sesame':
+        if secret_code == 'top secret':
             return {}, 200
         return {}, 403
 

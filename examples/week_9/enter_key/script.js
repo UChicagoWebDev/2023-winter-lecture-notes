@@ -43,8 +43,6 @@ class Journal extends React.Component {
   }
 
   postListener = (event) => {
-    // TODO: Listen for the Enter Key
-    console.log("KeyCode: " +event.key);
     if(event.key === 'Enter' && !event.shiftKey) {
       this.postHandler(event);
       event.preventDefault();
