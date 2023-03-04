@@ -26,6 +26,6 @@ def test_admin_forbidden(client):
 
 def test_admin_with_code(client):
     """Returns a 200 to calls with the correct secret password"""
-    response = client.post('/api/admin', json = {'secret_code': 'open sesame'})
+    response = client.post('/api/admin', json = {'secret_code': 'top secret'})
     assert response.status == "200 OK"
     return
