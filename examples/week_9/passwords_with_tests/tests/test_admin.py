@@ -1,6 +1,14 @@
 import pytest
 import passwords
 
+    # @app.route('/api/admin', methods=['POST'])
+    # def admin():
+    #     body = request.get_json()
+    #     secret_code = body.get('secret_code', None)
+    #     if secret_code == 'open sesame':
+    #         return {}, 200
+    #     return {}, 403
+
 @pytest.fixture
 def client():
     server = passwords.create_app()
@@ -14,4 +22,6 @@ def test_admin_forbidden(client):
 
 def test_admin_with_code(client):
     """Returns a 200 to calls with the correct secret password"""
+    response = client.post('/api/admin', json = {'secret_code': 'open sesame'})
+    assert response.status == "200 OK"
     return
